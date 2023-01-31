@@ -60,7 +60,7 @@ class Rectangle:
             The area of rectangle
         """
 
-        return (self.__width * self.__height)
+        return self.__width * self.__height
 
     def perimeter(self):
         """Calculates perimeter of rectangle
@@ -69,10 +69,10 @@ class Rectangle:
             The rectangle perimeter
         """
 
-        if (self.__width or self.__height) == 0:
-            return (0)
+        if self.__width == 0 or self.__height == 0:
+            return 0
         else:
-            return (2 * (self.__width + self.__height))
+            return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """Returns an “informal” and nicely printable
@@ -80,17 +80,23 @@ class Rectangle:
         rectangle instance filled with the # character
         """
 
-        if (self.__width or sel.__height) == 0:
+        if self.__width == 0 or self.__height == 0:
             return ''
         rect_ = ''
         for rows in range(self.__height):
             for cols in range(self.__width):
                 rect_ += '#'
-        rect_ += '/n'
+            rect_ += '\n'
         return rect_[:-1]
 
     def __repr__(self):
         """Returns an “official” string representation of a rectangle instance
         """
 
-        return "Rectangle({},{})".format(self.__width, self.__height)"
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Prints a goodbye message when the del function is called
+        """
+
+        print("Bye rectangle...")
