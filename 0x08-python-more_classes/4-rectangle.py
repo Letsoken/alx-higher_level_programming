@@ -93,4 +93,4 @@ class Rectangle:
         """Returns an “official” string representation of a rectangle instance
         """
 
-        return "Rectangle({},{})".format(self.__width, self.__height)"
+        return "Rectangle({}, {})".format(self.__width, self.__height)
